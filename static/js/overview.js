@@ -2456,6 +2456,12 @@ $(document).ready(function () {
                             });
                         }
                     }
+
+                    // rail voltages
+                    $.each(result.device.RailVoltages, function( index, value ) {
+                        const elementRailVoltageId = "#railVoltage-" + result.device.serial + "-" + index;
+                        $(elementRailVoltageId).html(value.Value + " V");
+                    })
                 }
             });
         },1500);
